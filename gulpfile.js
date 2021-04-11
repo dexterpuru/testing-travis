@@ -1,15 +1,9 @@
-let gulp = require("gulp");
+const gulp = require("gulp");
 
-gulp.task(
-  "serve",
-  gulp.series(() => {
-    cb();
-  })
-);
+gulp.task("serve", async () => {
+  require("./server.js.js");
+});
 
-gulp.task(
-  "test",
-  gulp.series(() => {
-    cb()
-  })
-);
+gulp.task("test", async () => {
+  require("./test.js");
+});
