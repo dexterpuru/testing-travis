@@ -1,10 +1,15 @@
-const { series } = require("gulp");
+let gulp = require("gulp");
 
-function serve(){
-  require("./server.js");
-}
-function test(){
-  require("./test.js");
-}
+gulp.task(
+  "serve",
+  gulp.series(() => {
+    require("./server.js");
+  })
+);
 
-exports.default = series(serve, test);
+gulp.task(
+  "test",
+  gulp.series(() => {
+    require("./test.js");
+  })
+);
