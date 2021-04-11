@@ -7,5 +7,5 @@ gulp
     require("./server.js");
   })
   .task("test", () => {
-    require(".test.js");
+    require("./test.js");
   });
