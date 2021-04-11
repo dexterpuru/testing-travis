@@ -1,11 +1,10 @@
 let gulp = require("gulp");
 
-gulp.task("default", ["serve", "test"]);
-
-gulp
-  .task("serve", () => {
+gulp.series(
+  () => {
     require("./server.js");
-  })
-  .task("test", () => {
-    require("./test.js");
-  });
+  },
+  () => {
+    require(".test.js");
+  }
+);
